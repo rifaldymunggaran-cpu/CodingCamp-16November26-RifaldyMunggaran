@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Focus Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ───────────── HEADER ───────────── -->
+  <header class="header">
+    <div class="header__left">
+      <span class="header__app-name">🎯 Focus Dashboard</span>
+    </div>
+    <div class="header__right">
+      <button id="themeToggle" class="btn btn--icon" title="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <main class="dashboard">
+
+    <!-- ───────────── GREETING SECTION ───────────── -->
+    <section class="card greeting-card">
+      <div class="greeting__top">
+        <div class="greeting__datetime">
+          <span id="currentTime" class="greeting__time">00:00:00</span>
+          <span id="currentDate" class="greeting__date">Monday, January 1</span>
+        </div>
+        <div class="greeting__message">
+          <h1 id="greetingText" class="greeting__text">Good Morning!</h1>
+          <p id="greetingName" class="greeting__name">Hello, Friend 👋</p>
+        </div>
+      </div>
+      <div class="greeting__name-edit">
+        <label for="nameInput">Your name:</label>
+        <input id="nameInput" type="text" class="input" placeholder="Enter your name…" maxlength="30" />
+        <button id="saveName" class="btn btn--primary">Save</button>
+      </div>
+    </section>
+
+    <!-- ───────────── POMODORO TIMER ───────────── -->
+    <section class="card timer-card">
+      <h2 class="card__title">⏱ Focus Timer</h2>
+
+      <div class="timer__display" id="timerDisplay">25:00</div>
+
+      <div class="timer__controls">
+        <button id="timerStart" class="btn btn--primary">Start</button>
+        <button id="timerStop"  class="btn btn--secondary">Stop</button>
+        <button id="timerReset" class="btn btn--ghost">Reset</button>
+      </div>
+
+      <div class="timer__custom">
+        <label for="customMinutes" class="timer__custom-label">Set duration (min):</label>
+        <input id="customMinutes" type="number" class="input input--small" min="1" max="120" value="25" />
+        <button id="applyTimer" class="btn btn--ghost">Apply</button>
+      </div>
+    </section>
+
+    <!-- ───────────── TO-DO LIST ───────────── -->
+    <section class="card todo-card">
+      <h2 class="card__title">✅ To-Do List</h2>
+
+      <div class="todo__input-row">
+        <input id="todoInput" type="text" class="input" placeholder="Add a new task…" maxlength="100" />
+        <button id="addTodo" class="btn btn--primary">Add</button>
+      </div>
+
+      <div class="todo__sort-row">
+        <label for="sortSelect" class="todo__sort-label">Sort by:</label>
+        <select id="sortSelect" class="select">
+          <option value="default">Default</option>
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+          <option value="done">Completed last</option>
+        </select>
+      </div>
+
+      <ul id="todoList" class="todo__list"></ul>
+    </section>
+
+    <!-- ───────────── QUICK LINKS ───────────── -->
+    <section class="card links-card">
+      <h2 class="card__title">🔗 Quick Links</h2>
+
+      <div class="links__input-row">
+        <input id="linkLabel" type="text"  class="input" placeholder="Label (e.g. YouTube)" maxlength="30" />
+        <input id="linkUrl"   type="url"   class="input" placeholder="https://…" />
+        <button id="addLink"  class="btn btn--primary">Add</button>
+      </div>
+
+      <div id="linksList" class="links__list"></div>
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
